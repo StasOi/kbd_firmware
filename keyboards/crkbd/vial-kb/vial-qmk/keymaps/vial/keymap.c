@@ -113,3 +113,20 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
   [3] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_VAI, RGB_VAD), ENCODER_CCW_CW(RGB_SAI, RGB_SAD), },
 };
 #endif
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+        case 1:
+            rgblight_sethsv_noeeprom(170, 255, 130); // Синий для слоя 1 (Fn1)
+            break;
+        case 2:
+            rgblight_sethsv_noeeprom(0, 255, 130);   // Красный для слоя 2 (Fn2)
+            break;
+        case 3:
+            rgblight_sethsv_noeeprom(210, 255, 130); // Пурпурный для слоя 3 (Fn3)
+            break;
+        default:
+            rgblight_sethsv_noeeprom(85, 255, 130);  // Зеленый для слоя 0
+            break;
+    }
+    return state;
+}
