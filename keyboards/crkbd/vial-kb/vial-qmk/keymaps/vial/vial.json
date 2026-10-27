@@ -4,6 +4,11 @@
     "productId": "0x0004",
     "matrix": {"rows": 8, "cols": 7},
     "lighting": "vialrgb",
+    "customKeycodes": [
+        {"name": "Layer Hue +", "title": "Hue of current layer +8", "shortName": "LHue+"},
+        {"name": "Layer Hue -", "title": "Hue of current layer -8", "shortName": "LHue-"},
+        {"name": "Layer Colors Reset", "title": "Reset layer colors to defaults", "shortName": "LRst"}
+    ],
     "layouts": {
         "labels": [
             ["Left EX1",  "Key", "Encoder", "None"],
